@@ -1,5 +1,18 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/posts">Posts</a>
-</nav>
+<header data-controller="menu" class="sm:flex sm:justify-between border-b-4 py-3 px-3">
+  <section class="flex justify-between items-center">
+    <div data-action="click->menu#closeNavFromLogo">
+      <a href="/"><img src="/images/logo.png"></a>
+    </div>
+    <div data-action="click->menu#openNav" class="h-6 w-6 sm:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path data-target="menu.hamburger" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        <path data-target="menu.x" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+  </section>
+  <nav data-target="menu.list" data-action="click->menu#closeNav" class="hidden sm:flex py-4">
+    <a href="/" class="hover:text-pink-500">Home</a>
+    <a href="/about" class="hover:text-pink-500">About</a>
+    <a href="/posts" class="hover:text-pink-500">Posts</a>
+  </nav>
+</header>
