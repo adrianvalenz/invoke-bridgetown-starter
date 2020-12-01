@@ -1,4 +1,4 @@
-<header data-controller="menu" class="sm:flex sm:justify-between border-b-4 py-3 px-3">
+<header data-controller="menu" class="if-mobile-nav-wrapper if-desktop-nav-wrapper sm:flex sm:justify-between border-b-4 py-3 px-3">
   <section class="flex justify-between items-center">
     <div data-action="click->menu#closeNavFromLogo">
       <a href="/"><img src="/images/logo.png"></a>
@@ -10,9 +10,10 @@
       </svg>
     </div>
   </section>
-  <nav data-target="menu.list" data-action="click->menu#closeNav" class="hidden sm:flex py-4">
-    <a href="/" class="hover:text-pink-500">Home</a>
-    <a href="/about" class="hover:text-pink-500">About</a>
-    <a href="/posts" class="hover:text-pink-500">Posts</a>
+  <nav data-target="menu.list" data-action="click->menu#closeNav" class="hidden
+    if-mobile-nav if-desktop-nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/posts">Posts</a>
   </nav>
 </header>

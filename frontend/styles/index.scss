@@ -3,3 +3,32 @@
 @import "tailwindcss/utilities";
 
 @import "swup-css";
+
+// these styles apply only to the nav element in
+// ./src/_components/navbar.liquid as I found it easier to just target this
+// using max-width instead of cancelling out styles for when screen was larger
+// than the sm: breakpoint
+@media (max-width: 640px) {
+  .if-mobile-nav-wrapper {
+    @apply relative;
+  }
+  .if-mobile-nav {
+    @apply absolute bg-gray-900 bg-opacity-90 text-gray-100 mt-3 w-full -ml-3
+    px-3 py-2;
+    a {
+      @apply block p-3 hover:bg-gray-600 rounded-lg;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .if-desktop-nav-wrapper {
+    @apply static;
+  }
+  .if-desktop-nav {
+    @apply static flex p-3;
+    a {
+      @apply p-2 rounded-lg text-gray-900 hover:text-green-500 m-1;
+    }
+  }
+}
