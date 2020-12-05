@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (use main according to Github's guidelines)
+  commit_messages: # Optional: configure the commit messages Netlify CMS will use when publishing changes (thanks @andrewmcodes)
+    create: "feat({{collection}}): :sparkles: Create {{slug}}"
+    update: "chore({{collection}}): :recycle: Update {{slug}}"
+    delete: "chore({{collection}}): :recycle: Delete {{slug}}"
+    uploadMedia: "feat(assets): :bento: Upload {{path}}"
+    deleteMedia: "chore(assets): :wastebasket: Delete {{path}}"
+
+local_backend: true # run 'npx netlify-cms-proxy-server' at the root of your project directory
+
+publish_mode: editorial_workflow
+
+media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+
+collections:
+  # Posts Collection
+  - name: blog # collection name
+    label: Blog # label in the CMS and new post button
+    folder: src/_posts/ # location of the files that make up the collection
+    extension: .md # extension of those files
+    format: frontmatter # format to use
+    create: true # allow creation of new items in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}' # the slug to use when creating new items
+    editor:
+      preview: false # According to the documentation, this won't work with our setup, but I didn't try
+    fields: # Fields for the collection
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Featured Image, name: thumbnail, widget: image }
+      - { label: Content, name: body, widget: markdown }
+      - { label: Author, name: author, widget: relation, collection: authors,
+        valueField: title, displayFields: ["title"], searchFields: ["title",
+          "email"]}
+  # Pages Collection
+  - name: pages
+    label: Pages
+    folder: src/_pages/
+    # extenstion: .md or .html?
+    format: frontmatter
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: page }
+      - { label: Page Title, name: title, widget: string }
+      - { label: Content, name: body, widget: markdown }
+  - name: authors
+    label: Authors
+    folder: src/_authors/
+    extension: .md
+    format: frontmatter
+    create: true
+    identifier_field: name
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: page }
+      - { label: Author Name, name: title, widget: string }
+      - { label: Email, name: email, widget: string }
+      - { label: Content, name: body, widget: markdown }

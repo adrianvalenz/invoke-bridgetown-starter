@@ -21,3 +21,12 @@ url: "" # the base hostname & protocol for your site, e.g. https://example.com
 permalink: pretty
 
 # timezone: America/Los_Angeles
+
+collections:
+  pages:
+    output: true
+    permalink: /:title
+  authors:
+    output: true
+    permalink: /:collection/:title
+
