@@ -3,7 +3,7 @@ layout: post
 title: Your First Post on Bridgetown
 date: 2020-11-29 01:48:43 -0800
 categories: updates
-thumbnail: /images/uploads/mahyar-motebassem-ixditk-q7he-unsplash.jpg
+thumbnail: /images/uploads/img_ba7c5e167bcd-1.jpeg
 author: Adrian Valenzuela
 ---
 

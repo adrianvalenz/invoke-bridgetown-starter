@@ -12,7 +12,9 @@ local_backend: true # run 'npx netlify-cms-proxy-server' at the root of your pro
 
 publish_mode: editorial_workflow
 
-media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+media_folder: "src/images/uploads" # Media files will be stored in the repo under src/images/uploads
+
+public_folder: "/images/uploads"
 
 collections:
   # Posts Collection
