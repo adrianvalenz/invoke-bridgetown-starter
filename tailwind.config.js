@@ -6,17 +6,13 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        'primary': '#009090',
-      }
-    },
+    extend: {},
   },
   variants: {
     extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms'), // need to add tailwind form plugin..
   ],
 }
