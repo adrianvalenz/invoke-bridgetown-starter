@@ -24,3 +24,13 @@ fields:
     maxSize: 64
   label: feature-image
   description: feature image for post cover and display
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: content
+  description: content of post
