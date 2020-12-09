@@ -34,3 +34,5 @@ fields:
       format: markdown
   label: content
   description: content of post
+pages:
+- _posts/first-post-with-forestry.md
