@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Your First Post on Bridgetown
-date: 2020-11-29 01:48:43 -0800
+date: '2020-11-29T01:48:43.000-08:00'
 categories: updates
-thumbnail: /images/uploads/img_ba7c5e167bcd-1.jpeg
+thumbnail: "/images/uploads/img_ba7c5e167bcd-1.jpeg"
 author: Adrian Valenzuela
----
+feature-image: images/uploads/mahyar-motebassem-ixditk-q7he-unsplash.jpg
 
+---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `bridgetown serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Bridgetown requires blog post files to be named according to the following format:
