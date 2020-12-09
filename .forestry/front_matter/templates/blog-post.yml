@@ -1,0 +1,38 @@
+---
+label: Blog post
+hide_body: true
+display_field: title
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: title of post
+- name: publish-date
+  type: datetime
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: publish-date
+  description: date post was published
+- name: feature-image
+  type: file
+  config:
+    maxSize: 64
+  label: feature-image
+  description: feature image for post cover and display
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: content
+  description: content of post
+pages:
+- _posts/first-post-with-forestry.md
