@@ -1,21 +1,23 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path: 
+admin_path: admin
 webhook_url: 
 sections:
 - type: directory
-  path: _posts
+  path: src/_posts
   label: Posts
   create: all
   match: "**/*"
+  templates:
+  - blog-post
 - type: directory
-  path: _pages
+  path: src/_pages
   label: Pages
   create: all
   match: "**/*"
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: src/images/uploads
+public_path: images/uploads
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
