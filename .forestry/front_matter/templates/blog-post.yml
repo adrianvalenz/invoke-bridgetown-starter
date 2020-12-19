@@ -1,6 +1,6 @@
 ---
-label: Blog post
-hide_body: true
+label: Posts
+hide_body: false
 display_field: title
 fields:
 - name: title
@@ -29,7 +29,7 @@ fields:
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
       format: markdown
   label: content
